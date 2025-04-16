@@ -1,0 +1,29 @@
+name: Publish sellular-commons to GitHub Packages
+
+on:
+  push:
+    branches: [ main ]     # Trigger the workflow on push to the main branch
+  workflow_dispatch:       # Manual trigger from GitHub UI
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest   # Use the latest Ubuntu environment
+
+    permissions:
+      contents: read         # Allow GitHub Actions to read the repo
+      packages: write        # Allow it to publish packages to GitHub Packages
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Check out the code from the repository
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3  # Set up the JDK
+        with:
+          distribution: 'temurin'   # Use Temurin OpenJDK
+          java-version: '21'        # Use JDK 21
+
+      - name: Publish to GitHub Packages
+        run: mvn deploy -DskipTests=true   # Deploy the package, skipping tests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Auto-generated GitHub token for authentication
