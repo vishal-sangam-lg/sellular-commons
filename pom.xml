@@ -135,7 +135,7 @@
 
     <distributionManagement>
         <repository>
-            <id>sellular-commons-github</id>
+            <id>github</id>
             <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/vishal-sangam-lg/sellular-commons</url>
         </repository>
