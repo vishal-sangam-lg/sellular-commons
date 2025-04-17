@@ -21,3 +21,9 @@
 /Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/jpa/querybuilder/JPABaseQueryBuilder.java
 /Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/jpa/querybuilder/JPACountQueryBuilder.java
 /Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/jpa/querybuilder/JPAQueryBuilder.java
+/Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/kafka/client/KafkaProducerClient.java
+/Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/kafka/config/ConsumerConfiguration.java
+/Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/kafka/config/KafkaConfigUtil.java
+/Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/kafka/config/KafkaConfiguration.java
+/Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/kafka/config/ProducerConfiguration.java
+/Users/vishalsangamlg/Web Development/Sellular 2.0/dropwizard-setups/sellular-commons-v2/src/main/java/com/sellular/commons/kafka/config/TopicConfiguration.java

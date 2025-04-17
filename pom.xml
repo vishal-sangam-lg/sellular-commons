@@ -22,6 +22,7 @@
         <modelmapper.version>3.2.2</modelmapper.version>
         <maven.shade.plugin.version>3.2.4</maven.shade.plugin.version>
         <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
+        <apache-kafka.version>4.0.0</apache-kafka.version>
     </properties>
 
     <dependencyManagement>
@@ -130,6 +131,11 @@
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
             <version>${modelmapper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${apache-kafka.version}</version>
         </dependency>
     </dependencies>
 

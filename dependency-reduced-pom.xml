@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sellular</groupId>
   <artifactId>sellular-commons</artifactId>
-  <version>1.0-0</version>
+  <version>1.0.1</version>
   <build>
     <plugins>
       <plugin>
@@ -63,6 +63,13 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <distributionManagement>
+    <repository>
+      <id>sellular-commons-github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/vishal-sangam-lg/sellular-commons</url>
+    </repository>
+  </distributionManagement>
   <properties>
     <guice.version>7.0.0</guice.version>
     <commons-collections.version>4.4</commons-collections.version>
@@ -74,6 +81,7 @@
     <maven.shade.plugin.version>3.2.4</maven.shade.plugin.version>
     <lombok.version>1.18.30</lombok.version>
     <maven.compiler.target>21</maven.compiler.target>
+    <apache-kafka.version>4.0.0</apache-kafka.version>
     <postgresql.version>42.7.5</postgresql.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
