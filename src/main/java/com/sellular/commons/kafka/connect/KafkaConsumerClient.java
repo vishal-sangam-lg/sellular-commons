@@ -3,14 +3,13 @@ package com.sellular.commons.kafka.connect;
 import com.sellular.commons.kafka.config.ConsumerConfiguration;
 import com.sellular.commons.kafka.config.KafkaConfiguration;
 import com.sellular.commons.kafka.config.TopicConfiguration;
+import com.sellular.commons.kafka.constants.HeaderConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.*;
+import org.slf4j.MDC;
 
 import java.time.Duration;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
@@ -83,11 +82,19 @@ public abstract class KafkaConsumerClient<K, V> implements Runnable {
     }
 
     private void processRecord(ConsumerRecord<K, V> record) {
+        setHeaders(record);
         try {
             process(record.key(), record.value());
         } catch (Exception e) {
             log.error("Error processing record from topic: {}", record.topic(), e);
         }
+    }
+
+    private static <K, V> void setHeaders(ConsumerRecord<K, V> record) {
+        final String transactionId = Optional.ofNullable(record.headers().lastHeader(HeaderConstants.X_TRANSACTION_ID))
+                .map(h -> new String(h.value()))
+                .orElse(UUID.randomUUID().toString());
+        MDC.put(HeaderConstants.X_TRANSACTION_ID, transactionId);
     }
 
     public void shutdown() {
