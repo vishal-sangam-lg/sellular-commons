@@ -1,4 +1,4 @@
-package com.sellular.commons.kafka.client;
+package com.sellular.commons.kafka.connect;
 
 import com.sellular.commons.kafka.config.KafkaConfiguration;
 import com.sellular.commons.kafka.constants.HeaderConstants;

@@ -2,6 +2,7 @@ package com.sellular.commons.kafka.config;
 
 import lombok.Data;
 
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 
@@ -12,4 +13,6 @@ public class TopicConfiguration {
     private String valueDeserializerClass;
     private List<String> topics;
     private String groupId;
+    private long pollFrequency = 1000;
+    private ChronoUnit pollFrequencyUnit = ChronoUnit.MILLIS;
 }
