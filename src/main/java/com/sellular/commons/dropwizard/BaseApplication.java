@@ -11,11 +11,20 @@ import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public abstract class BaseApplication<T extends BaseConfiguration> extends Application<T> {
 
     @Override
     public void initialize(final Bootstrap<T> bootstrap) {
+        bootstrap.addBundle(new SwaggerBundle<T>() {
+            @Override
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(T configuration) {
+                return configuration.getSwaggerBundleConfiguration();
+            }
+        });
+        super.initialize(bootstrap);
         bootstrap.setConfigurationSourceProvider(
                 new SubstitutingSourceProvider(
                         bootstrap.getConfigurationSourceProvider(),
@@ -30,7 +39,6 @@ public abstract class BaseApplication<T extends BaseConfiguration> extends Appli
         environment.jersey().register(new AccessTokenAuthFilter(configuration.getAccessToken()));
         environment.jersey().register(new TransactionIdFilter(configuration.getServiceName()));
         environment.jersey().register(new MdcCleanupFilter());
-        // TODO: Add request tracing filter
     }
 
 }

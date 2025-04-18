@@ -5,7 +5,7 @@
 
     <groupId>com.sellular</groupId>
     <artifactId>sellular-commons</artifactId>
-    <version>1.0.11</version>
+    <version>1.0.12</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -23,6 +23,7 @@
         <maven.shade.plugin.version>3.2.4</maven.shade.plugin.version>
         <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
         <apache-kafka.version>4.0.0</apache-kafka.version>
+        <smoketurner.version>4.0.5-1</smoketurner.version>
     </properties>
 
     <dependencyManagement>
@@ -136,6 +137,11 @@
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${apache-kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.smoketurner</groupId>
+            <artifactId>dropwizard-swagger</artifactId>
+            <version>${smoketurner.version}</version>
         </dependency>
     </dependencies>
 

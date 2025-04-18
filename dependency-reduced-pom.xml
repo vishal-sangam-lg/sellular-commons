@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sellular</groupId>
   <artifactId>sellular-commons</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.12</version>
   <build>
     <plugins>
       <plugin>
@@ -82,6 +82,7 @@
     <lombok.version>1.18.30</lombok.version>
     <maven.compiler.target>21</maven.compiler.target>
     <apache-kafka.version>4.0.0</apache-kafka.version>
+    <smoketurner.version>4.0.5-1</smoketurner.version>
     <postgresql.version>42.7.5</postgresql.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

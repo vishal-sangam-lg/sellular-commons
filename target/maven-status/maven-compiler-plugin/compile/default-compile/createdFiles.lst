@@ -2,7 +2,8 @@ com/sellular/commons/jpa/querybuilder/JPAQueryBuilder.class
 com/sellular/commons/core/exception/ErrorCodeInterface.class
 com/sellular/commons/core/exception/SellularException.class
 com/sellular/commons/jpa/querybuilder/JPABaseQueryBuilder.class
-com/sellular/commons/kafka/client/KafkaProducerClient.class
+com/sellular/commons/kafka/constants/KafkaEventInterface.class
+com/sellular/commons/kafka/connect/KafkaConsumerClient.class
 com/sellular/commons/core/filter/AccessTokenRequired.class
 com/sellular/commons/jpa/dao/BaseDao.class
 com/sellular/commons/jpa/config/GuiceJpaModule.class
@@ -12,6 +13,7 @@ com/sellular/commons/jpa/entity/ExternalBase.class
 com/sellular/commons/jpa/config/HikariDatabaseConfig.class
 com/sellular/commons/kafka/config/KafkaConfigUtil.class
 com/sellular/commons/kafka/config/TopicConfiguration.class
+com/sellular/commons/kafka/constants/HeaderConstants.class
 com/sellular/commons/core/filter/AccessTokenAuthFilter.class
 com/sellular/commons/jpa/querybuilder/JPABaseQueryBuilder$1.class
 com/sellular/commons/jpa/dao/AbstractDao.class
@@ -19,6 +21,7 @@ com/sellular/commons/dropwizard/configuration/BaseConfiguration.class
 com/sellular/commons/kafka/config/ConsumerConfiguration.class
 com/sellular/commons/jpa/querybuilder/JPACountQueryBuilder.class
 com/sellular/commons/jpa/constants/Queries.class
+com/sellular/commons/kafka/connect/KafkaProducerClient.class
 com/sellular/commons/core/filter/MdcCleanupFilter.class
 com/sellular/commons/kafka/config/KafkaConfiguration.class
 com/sellular/commons/core/filter/TransactionIdFilter.class
@@ -28,4 +31,5 @@ com/sellular/commons/kafka/config/ProducerConfiguration.class
 com/sellular/commons/core/exception/SellularException$SellularExceptionBuilder.class
 com/sellular/commons/core/exception/SellularExceptionMapper.class
 com/sellular/commons/jpa/config/ManagedPersistService.class
+com/sellular/commons/kafka/connect/KafkaConsumerRegistry.class
 com/sellular/commons/dropwizard/BaseApplication.class
