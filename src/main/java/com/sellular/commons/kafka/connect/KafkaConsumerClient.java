@@ -87,6 +87,8 @@ public abstract class KafkaConsumerClient<K, V> implements Runnable {
             process(record.key(), record.value());
         } catch (Exception e) {
             log.error("Error processing record from topic: {}", record.topic(), e);
+        } finally {
+            removeHeaders();
         }
     }
 
@@ -95,6 +97,10 @@ public abstract class KafkaConsumerClient<K, V> implements Runnable {
                 .map(h -> new String(h.value()))
                 .orElse(UUID.randomUUID().toString());
         MDC.put(HeaderConstants.X_TRANSACTION_ID, transactionId);
+    }
+
+    private void removeHeaders() {
+        MDC.remove(HeaderConstants.X_TRANSACTION_ID);
     }
 
     public void shutdown() {
