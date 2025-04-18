@@ -3,11 +3,13 @@ package com.sellular.commons.dropwizard.configuration;
 import io.dropwizard.core.Configuration;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class BaseConfiguration extends Configuration {
+@NoArgsConstructor
+public abstract class BaseConfiguration extends Configuration {
 
     private String accessToken;
 
