@@ -6,6 +6,7 @@ import com.sellular.commons.jpa.querybuilder.JPACountQueryBuilder;
 import com.sellular.commons.jpa.querybuilder.JPAQueryBuilder;
 import jakarta.persistence.EntityManager;
 import com.google.inject.persist.Transactional;
+import jakarta.persistence.NoResultException;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -112,6 +113,16 @@ public abstract class AbstractDao<T> implements BaseDao<T> {
                                                              final String orderByField,
                                                              final Boolean orderByAsc) {
         return getPaginatedResultInternal(perPage, pageNo, orderByField, orderByAsc);
+    }
+
+    public Optional<T> findByExternalId(final String externalId) {
+        try {
+            final JPAQueryBuilder<T> queryBuilder = queryBuilder();
+            queryBuilder.equal("externalId", externalId);
+            return queryBuilder.first();
+        } catch (NoResultException e) {
+            return Optional.empty();
+        }
     }
 
 }
